@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rosybrown;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    padding-top: 100px;
+    display: flex;
+
+}
+.left-content{
+    flex-basis: 50%;
+}

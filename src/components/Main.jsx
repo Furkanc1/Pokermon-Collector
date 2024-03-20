@@ -10,6 +10,10 @@ const Main = () => {
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
     const [nextUrl, setNextUrl] = useState()
     const [previousUrl, setPreviousUrl] = useState()
+    const [pokeInfo, setPokeInfo] = useState();
+    // console.log(nextUrl)
+    // console.log(previousUrl) 
+    // console.log(setUrl)
 
     const pokeFun = async() => {
         setLoading(true)
@@ -21,7 +25,7 @@ const Main = () => {
         getPokemon(arrayOfNamesAndUrl)
         // console.log("pokeFun (20 pokemon): ", res.data.results)
         setLoading(false)
-        console.log("array of 40 (pokeData): ", pokeData)
+        // console.log("array of 40 (pokeData): ", pokeData)
     }
     
     // const orderById = (Array) => {
@@ -64,7 +68,7 @@ const Main = () => {
         <>
             <div className="container">
                 <div className="left-content">
-                    <Card pokemon = {pokeData} loading = {loading} />
+                    <Card pokemon = {pokeData} loading = {loading} pokemonInfo = {pokeinfo => setPokeInfo(pokeinfo)} />
                     {/* <Card />
                     <Card />
                     <Here we fill dynamically now with useState() / useEffect() />
@@ -76,7 +80,7 @@ const Main = () => {
                     </div>
                 </div>
                 <div className="right-content">
-                    <Pokeinfo />
+                    <Pokeinfo data = {pokeInfo}/>
                 </div>
             </div>
         

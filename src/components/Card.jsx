@@ -2,7 +2,7 @@ import React from "react";
 // const uppercaseName = (name) => {
 //     name.charAt(0).toUpperCase() + name.substring(1)
 // } 
-const Card = ({ pokemon, loading }) => {
+const Card = ({ pokemon, loading, pokemonInfo }) => {
 //   console.log("(Pokemon) 40:", pokemon);
   // console.log(loading)
   return ( 
@@ -15,7 +15,7 @@ const Card = ({ pokemon, loading }) => {
                     const pokemonDefaultPic = item.sprites.front_default
                 return (
                     <>
-                        <div className="card">
+                        <div className="card" key={item.id} onClick={() => pokemonInfo(item)}>
                             <h1>{pokemonId}</h1>
                             <img
                             src={pokemonDefaultPic}

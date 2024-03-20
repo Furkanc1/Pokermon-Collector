@@ -15,7 +15,7 @@ const Main = () => {
         setLoading(true)
         const res = await axios.get(url);
         const arrayOfNamesAndUrl = res.data.results
-        // console.log("array of names + URl", arrayOfNamesAndUrl);
+        console.log("array of names + URl", arrayOfNamesAndUrl);
         setNextUrl(res.data.next);
         setPreviousUrl(res.data.previous);
         getPokemon(arrayOfNamesAndUrl)
@@ -24,23 +24,38 @@ const Main = () => {
         console.log("array of 40 (pokeData): ", pokeData)
     }
     
-    const orderById = (Array) => {
-        Array.sort((a, b) => a.id > b.id ? 1:-1)
-    }
+    // const orderById = (Array) => {
+    //     Array.sort((a, b) => a.id > b.id ? 1:-1)
+    // }
+
+    // DIDNT WORK (DUPLICATED ARRAY)
+    // const getPokemon = async(res) => {
+    //     res.map(async(pokeObject) => {
+    //         // console.log("20pokemonInfo:",item)
+    //         const pokemonsUrl = await axios.get(pokeObject.url)
+    //         console.log("Pokemon Info: ", pokemonsUrl.data)
+    //         let pokemonArray = []
+    //         pokemonArray.map((state => {
+    //             state = [...state, pokemonsUrl.data];
+    //             orderById(state)
+    //             return state
+    //         }))
+    //         setPokeData(pokemonArray)
+    //     })
+    // }
 
     const getPokemon = async(res) => {
-        res.map(async(pokeObject) => {
-            // console.log("20pokemonInfo:",item)
-            const pokemonsUrl = await axios.get(pokeObject.url)
-            // console.log("Pokemon Info: ", result.data)
-            setPokeData(state => {
-                state = [...state, pokemonsUrl.data];
-                orderById(state)
-                return state;
-            })
-        })
-    }
+        const pokemonData = [];
+        for(let i = 0; i < res.length; i++) {
+            const currentItem = res[i];
+            const pokemonsUrl = await axios.get(currentItem.url);
 
+            pokemonData.push(pokemonsUrl.data);
+        }
+
+        setPokeData(pokemonData);
+    }
+  
     useEffect(() => {
         pokeFun();
         

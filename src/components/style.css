@@ -105,12 +105,12 @@ body {
 }
 
 .left-content {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 180px 180px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+    display: grid;
+    grid-gap: 110px 135px;
+    grid-template-columns: 170px 300px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .btnContainer {
@@ -207,17 +207,20 @@ img {
 }
 
 .card {
-    width: 180px;
+    width: 281px;
     background-color: rgb(228, 63, 63);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 3px;
     box-shadow: 0px 0px 13px 0px black;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-around;
     box-sizing: border-box;
     border-style: solid;
     color: black;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -40px;
 }
 
 .card:hover {

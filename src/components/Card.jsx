@@ -1,16 +1,33 @@
-import React from "react"
-
-const Card = () => {
-    return(
-        <>
-            <div className="card">
-                <h1>1.</h1>
-                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/050.png" alt="pokemonPic"></img>
-                <h2>Diglet</h2>
-
-            </div>
-        </>
-    )
-}
+import React from "react";
+// const uppercaseName = (name) => {
+//     name.charAt(0).toUpperCase() + name.substring(1)
+// } 
+const Card = ({ pokemon, loading }) => {
+//   console.log("(Pokemon) 40:", pokemon);
+  // console.log(loading)
+  return ( 
+    <>
+        {
+            loading ? (<h1> Loading... </h1>) : (
+                pokemon.map((item) => {
+                    const pokemonName = item.name
+                    const pokemonId = item.id
+                    const pokemonDefaultPic = item.sprites.front_default
+                return (
+                    <>
+                        <div className="card">
+                            <h1>{pokemonId}</h1>
+                            <img
+                            src={pokemonDefaultPic}
+                            alt="pokemonPic"></img>
+                            <h2>{pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)}</h2>
+                        </div>
+                    </>
+                );
+            }))
+        }
+    </>
+  );
+};
 
 export default Card;

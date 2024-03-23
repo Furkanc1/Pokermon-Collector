@@ -17,10 +17,30 @@ const Pokeinfo = ({data}) => {
                 <>
                 <div className="right-content-container">
                     <h1 className="Pokename">{data.name}</h1>
+                    <div className="pokeDataContainer">
+                        <h3 id="typeText">Type(s):</h3>
+                    {
+                        data.types.map(data => {
+                            return(
+                                <>
+                                
+                                    <h3 className="">
+                                         {data.type.name}
+                                    </h3>
+                                
+                                </>
+                            )
+                    })
+                    }
+                    </div>
+                    
+                    
                     <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="pokemonPic"></img>
                     {/* <h3>Height: {data.height}</h3>
                     <h3>Weight: {data.weight}</h3> */}
                     <div className="abilities">
+                        <div className="pokeDataContainer">
+                        <h3 className="">Abilities:</h3>
                         {
                             data.abilities.map(abil => {
                                 return(
@@ -32,11 +52,14 @@ const Pokeinfo = ({data}) => {
                                 )
                             })
                         }
+                        </div>
+                        
+                        
 
                         <br></br>
-                        {/* PICK UP HERE TIME: 34:10 */}
                     </div>
                     <div className="base-stat">
+                    <h3 className="pokeDataContainer">Stats:</h3>
                         {
                             data.stats.map( stats => {
                                 return(

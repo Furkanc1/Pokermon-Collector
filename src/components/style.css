@@ -157,7 +157,8 @@ button:hover {
     flex-wrap: wrap;
     flex-direction: column;
     /* margin-top: 50%; */
-    margin: 40px auto 0px 0px;
+    margin: 40px -6px 0px 0px;
+    border-radius: 8px;
 }
 
 .right-content img {
@@ -308,4 +309,95 @@ img {
 }
 .importantTextAlt {
     text-shadow: red 1px 1px 7px;
+}
+
+.pokeDataContainer {
+    padding: 5px;
+    /* margin-top: 2rem; */
+    background-color: rgb(228, 63, 63);
+    border-style: solid;
+    color: white;
+    margin: 5px 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 745px) {
+    .subtitle {
+        display: none;
+    }
+    .footerContainer h4{
+        display: none;
+    }
+}
+@media screen and (max-width: 534.4px) {
+    .navbarContainer {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 306px) {
+    .navbarContainer {
+        flex-direction: column;
+    }
+    .web-title{
+        flex-direction: row;
+    }
+}
+@media screen and (max-width: 368px) {
+    .card {
+        width: auto;
+    }
+}
+@media screen and (max-width: 1105px) {
+    .card h1{
+        display: none;
+    }
+    .card img{
+        display: none;
+    }
+    .left-content{
+        grid-template-columns: 170px;
+        grid-gap: 70px;
+    }
+}
+@media screen and (max-width: 860px) {
+    .container{
+        flex-direction: column-reverse;
+        padding-top: 30px;
+
+    .right-content-container {
+            background-color: black; 
+            border-style: solid; 
+        }
+    }
+    .left-content {
+        width: 100%;
+    }
+    .right-content {
+        grid-template-columns: auto;
+        /* padding: 5px 5px 5px 50px; */
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: inherit;
+        display: grid;
+        margin: auto;
+        padding: 0px 3px 30px 15px;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .right-content-container{
+        background-color: black;
+    }
+}
+@media screen and (max-width: 1460px) {
+    .right-content-container{
+        background-color: none;
+    }
 }

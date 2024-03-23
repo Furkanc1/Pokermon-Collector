@@ -5,6 +5,7 @@
 
 body {
   background-color: rosybrown;
+  height: 100vh;
 }
 
 .container {
@@ -83,8 +84,9 @@ body {
 
 .navbarContainer a:hover {
     text-decoration: underline;
-    font-weight: bold;
+    /* font-weight: bold; */
     transition: ease-in-out 175ms;
+    text-decoration-color: red;
 }
 
 .navbarContainer ul {
@@ -147,6 +149,17 @@ button:hover {
     right: 80px;
 }
 
+.right-content-container{
+    /* margin-bottom: 65%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* margin-top: 50%; */
+    margin: 40px auto 0px 0px;
+}
+
 .right-content img {
     margin: 1rem;
     background-color: rgb(228, 63, 63);
@@ -160,10 +173,10 @@ button:hover {
 .Pokename {
     align-items: center;
     display: flex;
-    margin: 5px auto;
+    margin: 5px;
     background-color: rgb(228, 63, 63);
     border-radius: 8px;
-    width: 205px;
+    width: 245px;
     justify-content: center;
     border-style: solid;
     color: white;
@@ -177,7 +190,7 @@ button:hover {
 }
 
 .abilities .group {
-    width: 30%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -192,11 +205,12 @@ button:hover {
 }
 
 .base-stat {
+    padding: 5px;
     margin-top: 2rem;
     background-color: rgb(228, 63, 63);
     border-style: solid;
     color: white;
-    margin: 5px 11rem;
+    margin: 5px 1rem;
     border-radius: 8px;
 }
 

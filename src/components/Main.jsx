@@ -75,8 +75,17 @@ const Main = () => {
                     <Card />
                     <Card /> */}
                     <div className="btnContainer">
-                        <button>Previous</button>
-                        <button>Next</button>
+                        {
+                            previousUrl &&
+                            <button onClick={()=>{
+                            setPokeData([])
+                            setUrl(previousUrl)
+                        }}>Previous</button>
+                        }
+                        <button onClick={() => {
+                            setPokeData([])
+                            setUrl(nextUrl)
+                        }}>Next</button>
                     </div>
                 </div>
                 <div className="right-content">

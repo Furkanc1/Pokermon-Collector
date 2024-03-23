@@ -9,15 +9,17 @@ const Pokeinfo = ({data}) => {
     // let clickedPokemonAttack = data.
     // let clickedPokemonDefense = data.
     // let clickedPokemonSpecialMove = data.
-    console.log(data
-        )
+    console.log(data)
     return(
         <>
         {
             (!data) ? "" : (
                 <>
+                <div className="right-content-container">
                     <h1 className="Pokename">{data.name}</h1>
                     <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="pokemonPic"></img>
+                    {/* <h3>Height: {data.height}</h3>
+                    <h3>Weight: {data.weight}</h3> */}
                     <div className="abilities">
                         {
                             data.abilities.map(abil => {
@@ -35,12 +37,17 @@ const Pokeinfo = ({data}) => {
                         {/* PICK UP HERE TIME: 34:10 */}
                     </div>
                     <div className="base-stat">
-                        <h3>Hp:30</h3>
-                        <h3>Speed:50</h3>
-                        <h3>Attack:50</h3>
-                        <h3>Defense:50</h3>
-                        <h3>Special-Attack:50</h3>
+                        {
+                            data.stats.map( stats => {
+                                return(
+                                    <>
+                                        <h3>{stats.stat.name}: {stats.base_stat}</h3>
+                                    </>
+                                )
+                            })
+                        }
                     </div>
+                </div>
                 </>
             )
         }

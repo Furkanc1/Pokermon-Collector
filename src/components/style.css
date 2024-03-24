@@ -311,6 +311,10 @@ img {
     text-shadow: red 1px 1px 7px;
 }
 
+.pokeTypes{
+    list-style: none;
+}
+
 .pokeDataContainer {
     padding: 5px;
     /* margin-top: 2rem; */
@@ -321,7 +325,7 @@ img {
     border-radius: 8px;
     display: flex;
     justify-content: center;
-    gap: 0px;
+    gap: 5px;
     align-items: center;
     flex-wrap: wrap;
 }

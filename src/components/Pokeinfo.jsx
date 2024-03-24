@@ -18,19 +18,21 @@ const Pokeinfo = ({data}) => {
                 <div className="right-content-container">
                     <h1 className="Pokename">{data.name}</h1>
                     <div className="pokeDataContainer">
-                        <h3 id="typeText">Type(s):</h3>
+                        <h3 id="typeText">Type(s): </h3> 
+                    
                     {
                         data.types.map(data => {
                             return(
                                 <>
                                 
                                     <h3 className="">
-                                         {data.type.name}
+                                        <li className="pokeTypes">- {data.type.name} </li>
                                     </h3>
                                 
                                 </>
                             )
                     })
+
                     }
                     </div>
                     

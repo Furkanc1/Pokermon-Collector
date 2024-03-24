@@ -67,13 +67,12 @@ const Main = () => {
     return(
         <>
             <div className="container">
+                
                 <div className="left-content">
                     <Card pokemon = {pokeData} loading = {loading} pokemonInfo = {pokeinfo => setPokeInfo(pokeinfo)} />
                     {/* <Card />
                     <Card />
-                    <Here we fill dynamically now with useState() / useEffect() />
-                    <Card />
-                    <Card /> */}
+                    <Here we fill dynamically now with useState() / useEffect() /> */}
                     <div className="btnContainer">
                         {
                             previousUrl &&

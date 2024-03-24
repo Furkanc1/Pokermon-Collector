@@ -1,9 +1,10 @@
 import './App.css';
 import Main from './components/Main';
-import Navbar from './components/navbar';
 import Footer from './components/footer';
-import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/navbar';
 import Landing from './components/landingPage';
+import { Route, Routes } from 'react-router-dom';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <>

@@ -15,18 +15,9 @@ const Main = () => {
     // console.log(previousUrl) 
     // console.log(setUrl)
 
-    const pokeFun = async() => {
-        setLoading(true)
-        const res = await axios.get(url);
-        const arrayOfNamesAndUrl = res.data.results
-        console.log("array of names + URl", arrayOfNamesAndUrl);
-        setNextUrl(res.data.next);
-        setPreviousUrl(res.data.previous);
-        getPokemon(arrayOfNamesAndUrl)
-        // console.log("pokeFun (20 pokemon): ", res.data.results)
-        setLoading(false)
-        // console.log("array of 40 (pokeData): ", pokeData)
-    }
+    // const pokeFun = async() => {
+        
+    // }
     
     // const orderById = (Array) => {
     //     Array.sort((a, b) => a.id > b.id ? 1:-1)
@@ -60,14 +51,23 @@ const Main = () => {
         setPokeData(pokemonData);
     }
 
-    const getPokeFun = useCallback(() => {
-        pokeFun();
-    },[pokeFun])
+    const getPokeFun = useCallback( async() => {
+        setLoading(true)
+        const res = await axios.get(url);
+        const arrayOfNamesAndUrl = res.data.results
+        console.log("array of names + URl", arrayOfNamesAndUrl);
+        setNextUrl(res.data.next);
+        setPreviousUrl(res.data.previous);
+        getPokemon(arrayOfNamesAndUrl)
+        // console.log("pokeFun (20 pokemon): ", res.data.results)
+        setLoading(false)
+        // console.log("array of 40 (pokeData): ", pokeData)
+    },[url])
 
     useEffect(() => {
         getPokeFun();
         
-    },[url])
+    },[url, getPokeFun])
     return(
         <>
             <div className="container">

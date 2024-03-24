@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Card from "./Card";
 import Pokeinfo from "./Pokeinfo";
 import '../components/style.css';
@@ -59,9 +59,13 @@ const Main = () => {
 
         setPokeData(pokemonData);
     }
-  
-    useEffect(() => {
+
+    const getPokeFun = useCallback(() => {
         pokeFun();
+    },[pokeFun])
+
+    useEffect(() => {
+        getPokeFun();
         
     },[url])
     return(

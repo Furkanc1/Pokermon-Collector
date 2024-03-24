@@ -9,7 +9,7 @@ const Pokeinfo = ({data}) => {
     // let clickedPokemonAttack = data.
     // let clickedPokemonDefense = data.
     // let clickedPokemonSpecialMove = data.
-    console.log(data)
+    // console.log(data)
     return(
         <>
         {
@@ -21,15 +21,11 @@ const Pokeinfo = ({data}) => {
                         <h3 id="typeText">Type(s): </h3> 
                     
                     {
-                        data.types.map(data => {
-                            return(
-                                <>
-                                
-                                    <h3 className="">
+                        data.types.map((data, index) => {
+                            return( 
+                                    <h3 key={`${data.type.name}-${index}`}>
                                         <li className="pokeTypes">- {data.type.name} </li>
                                     </h3>
-                                
-                                </>
                             )
                     })
 
@@ -44,13 +40,11 @@ const Pokeinfo = ({data}) => {
                         <div className="pokeDataContainer">
                         <h3 className="">Abilities:</h3>
                         {
-                            data.abilities.map(abil => {
+                            data.abilities.map((abil, index) => {
                                 return(
-                                    <>
-                                        <div className="group">
+                                        <div key={`${abil.ability.name}-${index}`} className="group">
                                             <h2>{abil.ability.name}</h2>
                                         </div>
-                                    </>
                                 )
                             })
                         }
@@ -63,11 +57,11 @@ const Pokeinfo = ({data}) => {
                     <div className="base-stat">
                     <h3 className="pokeDataContainer">Stats:</h3>
                         {
-                            data.stats.map( stats => {
+                            data.stats.map( (stats, index) => {
                                 return(
-                                    <>
+                                    <div key={`${stats.stat.name}-${index}`}>
                                         <h3>{stats.stat.name}: {stats.base_stat}</h3>
-                                    </>
+                                    </div>
                                 )
                             })
                         }

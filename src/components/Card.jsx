@@ -9,20 +9,18 @@ const Card = ({ pokemon, loading, pokemonInfo }) => {
     <>
         {
             loading ? (<h1> Loading... </h1>) : (
-                pokemon.map((item) => {
+                pokemon.map((item, index) => {
                     const pokemonName = item.name
                     const pokemonId = item.id
                     const pokemonDefaultPic = item.sprites.front_default
                 return (
-                    <>
-                        <div className="card" key={item.id} onClick={() => pokemonInfo(item)}>
+                        <div className="card" key={`${item.id}-${index}`} onClick={() => pokemonInfo(item)}>
                             <h1>{pokemonId}</h1>
                             <img
                             src={pokemonDefaultPic}
                             alt="pokemonPic"></img>
                             <h2>{pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)}</h2>
                         </div>
-                    </>
                 );
             }))
         }

@@ -19,13 +19,13 @@ const Navbar = () => {
                 </a>
                 <ul>
                     <li> 
-                        <a href="./about.js" className="">About</a> 
-                    </li>
-                    <li> 
-                        <a href="/login" className="">Log-In</a> 
+                        <a href="./about" className="">About</a> 
                     </li>
                     <li> 
                         <a href="/signup" className="">Sign-Up</a> 
+                    </li>
+                    <li> 
+                        <a href="/login" className="">Log-In</a> 
                     </li>
                 </ul>
                 

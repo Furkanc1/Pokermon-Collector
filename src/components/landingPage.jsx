@@ -9,7 +9,10 @@ const Landing = () => {
     <div className="landingPageContainer">
         <div className="welcomeText">
             <h2>
-                Welcome to Pokérmon-Collector, a personal project harnessing the power of the PokeAPI! This website serves as a comprehensive resource for all things Pokémon, allowing users to delve into the vast world of Pokémon and explore their abilities, types, and stats. 
+                Welcome to Pokérmon-Collector, a personal project harnessing the power of the PokeAPI! 
+                <p className="hideOnMobile">
+                    This website serves as a comprehensive resource for all things Pokémon, allowing users to delve into the vast world of Pokémon and explore their abilities, types, and stats. 
+                </p>
                 <br></br>
                 <br></br>
                 <p className="importantText">
@@ -18,11 +21,13 @@ const Landing = () => {
                 </p>
                 <br></br>
                 <br></br>
-                Exciting developments are underway as I work towards integrating this platform into a larger Pokémon collecting and trading website. Stay tuned for updates as I evolve this project into a dynamic React app, bringing the magic of Pokémon to life in new and exciting ways!
+                <p className="hideOnMobile">
+                    Exciting developments are underway as I work towards integrating this platform into a larger Pokémon collecting and trading website. Stay tuned for updates as I evolve this project into a dynamic React app, bringing the magic of Pokémon to life in new and exciting ways!
+                </p>
             </h2>
         </div>
         <div className="split-content">
-            <div className="newsFeed">
+            <div className="newsFeed hideOnMobile" >
                 <h1 className="importantTextAlt">News!</h1>
                 <h3>
                     Attention Pokémon Trainers! Exciting developments are underway in the world of Pokémon, as reports from the Galar region indicate a surge in Dynamax energy. Trainers are flocking to the Wild Area to test their skills in thrilling Max Raid Battles and encounter Gigantamax forms of beloved Pokémon. Leading the charge in these epic battles are none other than Zacian and Zamazenta, the legendary heroes of Galar, known for their unparalleled strength and awe-inspiring abilities. These majestic Pokémon have become the cornerstone of many top-tier strategies, captivating audiences with their legendary prowess.

@@ -253,6 +253,14 @@ img {
     align-items: center;
     flex-wrap: wrap;
 }
+.authFormPageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto auto 170px auto;
+}
 
 .welcomeText {
     margin: 40px 0px 85px 0px;
@@ -306,10 +314,16 @@ img {
 
 .importantText {
     text-shadow: white 0px 1px 5px;
+    padding: 10px;
 }
 .importantTextAlt {
     text-shadow: red 1px 1px 7px;
+    padding: 10px;
 }
+
+/* .listText{
+
+} */
 
 .pokeTypes{
     list-style: none;
@@ -330,6 +344,37 @@ img {
     flex-wrap: wrap;
 }
 
+.authForm{
+    background-color: #e43f3f;
+    align-items: center;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px 55px 25px 55px;
+    border-radius: 8px;
+    box-shadow: white 0px 0px 28px 0px;
+}
+
+.authForm input {
+    background-color: white;
+    border-style: solid;
+    padding: 10px 5px 10px 5px;
+    border-radius: 8px;
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+.formBtn {
+    margin: 22px auto;
+    background-color: black;
+    color: white;
+    border-style: solid;
+    border-radius: 8px;
+    padding: 5px;
+    width: 175px;
+}
+
 @media screen and (max-width: 745px) {
     .subtitle {
         display: none;
@@ -337,12 +382,36 @@ img {
     .footerContainer h4{
         display: none;
     }
+    .welcomeText {
+        margin: 40px -135px 85px -135px;
+    }
+    .newsFeed {
+        margin: 40px -135px 85px -135px;
+    }
+    .authForm {
+        flex-direction: column;
+    }
+
 }
+
 @media screen and (max-width: 534.4px) {
     .navbarContainer {
         flex-direction: column;
     }
+    .hideOnMobile {
+        display: none;
+    }
 }
+@media screen and (max-width: 420px) {
+    .authForm {
+        padding: 35px;
+    }
+    .authForm input {
+        width: auto;
+        padding: 7px;
+    }
+}
+
 @media screen and (max-width: 306px) {
     .navbarContainer {
         flex-direction: column;
@@ -351,11 +420,13 @@ img {
         flex-direction: row;
     }
 }
+
 @media screen and (max-width: 368px) {
     .card {
         width: auto;
     }
 }
+
 @media screen and (max-width: 1105px) {
     .card h1{
         display: none;
@@ -368,6 +439,11 @@ img {
         grid-gap: 70px;
     }
 }
+
+@media screen and (max-width: 1000px) {
+
+}
+
 @media screen and (max-width: 860px) {
     .container{
         flex-direction: column-reverse;
@@ -400,6 +476,7 @@ img {
         background-color: black;
     }
 }
+
 @media screen and (max-width: 1460px) {
     .right-content-container{
         background-color: none;

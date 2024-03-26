@@ -4,6 +4,7 @@ import Pokeinfo from "./Pokeinfo";
 import '../components/style.css';
 import axios from "axios";
 import Search from "./search";
+import gettingPokemon from "./Utils/gettingPokemon";
 const Main = () => {
     
     const [pokeData, setPokeData] = useState([]);
@@ -12,6 +13,9 @@ const Main = () => {
     const [nextUrl, setNextUrl] = useState()
     const [previousUrl, setPreviousUrl] = useState()
     const [pokeInfo, setPokeInfo] = useState();
+    const [pokemon, setPokemon] = useState();
+    const [searchLoading, setSearchLoading] = useState(false)
+    // console.log(searchLoading)
     // console.log(nextUrl)
     // console.log(previousUrl) 
     // console.log(setUrl)
@@ -69,12 +73,29 @@ const Main = () => {
         getPokeFun();
         
     },[url, getPokeFun])
+
+    const getSearchedPokemon = async(search) => {
+        setSearchLoading(true)
+        const response = await gettingPokemon(search)
+        // console.log( "search response data:" ,response)
+        const results = await response.json()
+        console.log('searched pokemon info:' , results)
+        setPokemon(results)
+        setSearchLoading(false)
+    }
     return(
         <>
             <div className="container">
                 <div className="left-content">
                 <div className="searchbarContainer">
-                    <Search />
+
+                <Search getSearchedPokemon={getSearchedPokemon}/>
+                {!loading && pokemon ? (
+                    <div>
+                    <h1>{pokemon.name}</h1>   
+                    </div>
+                ): searchLoading}
+
                 </div>
                 <br className="hideOnMobile"></br>
                 <br className="hideOnMobile"></br>

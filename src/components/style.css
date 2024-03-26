@@ -375,41 +375,20 @@ img {
     width: 175px;
 }
 
-@media screen and (max-width: 745px) {
-    .subtitle {
-        display: none;
-    }
-    .footerContainer h4{
-        display: none;
-    }
-    .welcomeText {
-        margin: 40px -135px 85px -135px;
-    }
-    .newsFeed {
-        margin: 40px -135px 85px -135px;
-    }
-    .authForm {
-        flex-direction: column;
-    }
-
+.searchbarContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
 }
 
-@media screen and (max-width: 534.4px) {
-    .navbarContainer {
-        flex-direction: column;
-    }
-    .hideOnMobile {
-        display: none;
-    }
-}
-@media screen and (max-width: 420px) {
-    .authForm {
-        padding: 35px;
-    }
-    .authForm input {
-        width: auto;
-        padding: 7px;
-    }
+.pokeSearchForm {
+    width: 155px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 0px 60px 0px 60px;
 }
 
 @media screen and (max-width: 306px) {
@@ -427,24 +406,51 @@ img {
     }
 }
 
-@media screen and (max-width: 1105px) {
-    .card h1{
-        display: none;
+@media screen and (max-width: 420px) {
+    .authForm {
+        padding: 35px;
     }
-    .card img{
-        display: none;
+    .authForm input {
+        width: auto;
+        padding: 7px;
     }
-    .left-content{
-        grid-template-columns: 170px;
-        grid-gap: 70px;
+    .pokeSearchForm{
+        padding: 0px 60px 0px 60px;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 534.4px) {
+    .navbarContainer {
+        flex-direction: column;
+    }
+    .hideOnMobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 745px) {
+    .subtitle {
+        display: none;
+    }
+    .footerContainer h4{
+        display: none;
+    }
+    .welcomeText {
+        margin: 40px -135px 85px -135px;
+    }
+    .newsFeed {
+        margin: 40px -135px 85px -135px;
+    }
+    .authForm {
+        flex-direction: column;
+    }
+    .pokeSearchForm {
+        flex-direction: row;    
+    }
 
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1020px) {
     .container{
         flex-direction: column-reverse;
         padding-top: 30px;
@@ -469,16 +475,39 @@ img {
         margin: auto;
         padding: 0px 3px 30px 15px;
     }
+    .hideOnMobile {
+        display: none;
+    }
 }
 
-@media screen and (min-width: 1536px) {
-    .right-content-container{
-        background-color: black;
+@media screen and (max-width: 1205px) {
+    .card h1{
+        display: none;
     }
+    .card img{
+        display: none;
+    }
+    .left-content{
+        grid-template-columns: 170px;
+        grid-gap: 70px;
+    }
+    .hideOnMobile {
+        display: none;    
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    /* .pokeSearchForm {
+    } */
 }
 
 @media screen and (max-width: 1460px) {
     .right-content-container{
         background-color: none;
+    }
+}
+@media screen and (min-width: 1536px) {
+    .right-content-container{
+        background-color: black;
     }
 }

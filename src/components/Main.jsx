@@ -3,6 +3,7 @@ import Card from "./Card";
 import Pokeinfo from "./Pokeinfo";
 import '../components/style.css';
 import axios from "axios";
+import Search from "./search";
 const Main = () => {
     
     const [pokeData, setPokeData] = useState([]);
@@ -71,8 +72,12 @@ const Main = () => {
     return(
         <>
             <div className="container">
-                
                 <div className="left-content">
+                <div className="searchbarContainer">
+                    <Search />
+                </div>
+                <br className="hideOnMobile"></br>
+                <br className="hideOnMobile"></br>
                     <Card pokemon = {pokeData} loading = {loading} pokemonInfo = {pokeinfo => setPokeInfo(pokeinfo)} />
                     {/* <Card />
                     <Card />
@@ -92,6 +97,7 @@ const Main = () => {
                     </div>
                 </div>
                 <div className="right-content">
+                    
                     <Pokeinfo data = {pokeInfo}/>
                 </div>
             </div>

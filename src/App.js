@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import About from './components/about';
 import Signup from './components/signup';
 import Login from './components/login';
+// import searchPage from './components/searchPage';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Landing />} />
 
         <Route path='/pokemonIndex' element={<Main/>} />
+        <Route path='/search' element={<searchPage/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Signup/>} />

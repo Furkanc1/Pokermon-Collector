@@ -7,6 +7,7 @@ const Search = (props) => {
     return(
         <>
         {/* <h1>{search}</h1> */}
+
         <form className="authForm pokeSearchForm">
             <input type="search" id="pokeSearch" name="pokeSearch" placeholder="Enter Pokemon Name..." value={search} onChange={(e) => setSearch(e.target.value)}/>
             

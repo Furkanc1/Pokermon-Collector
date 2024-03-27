@@ -92,7 +92,7 @@ const Main = () => {
                 <Search getSearchedPokemon={getSearchedPokemon}/>
                 {!loading && pokemon ? (
                     <div className="searchedPokemonContainer">
-                        <div className="searchedPokemonContainer">
+                        <div className="searchedPokemonContainer ">
                         <h1 className="Pokename">{pokemon.name}</h1>
                         <div className="pokeDataContainer">
                             <h3 id="typeText">Type(s): </h3> 

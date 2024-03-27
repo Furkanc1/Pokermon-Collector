@@ -171,6 +171,7 @@ button:hover {
     /* margin-top: 50%; */
     margin: 40px -6px 0px 0px;
     border-radius: 8px;
+    padding: 3px;
 }   
 
 .right-content img {
@@ -392,8 +393,9 @@ img {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-left: 30px;
-    
+    margin: auto;
+    border-radius: 8px;
+    /* padding: 25px 0px 8px 0px; */
 }
 
 .pokeSearchForm {
@@ -473,8 +475,11 @@ img {
             border-style: solid; 
         }
     .searchbarContainer {
-            background-color: black; 
-            border-style: solid; 
+        border-radius: 8px;
+        padding: 25px;
+        background-color: black;
+        border-style: solid;
+        width: 269px;
         }
     }
     .left-content {
@@ -495,6 +500,9 @@ img {
     .hideOnMobile {
         display: none;
     }
+    .card img{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1205px) {
@@ -502,21 +510,43 @@ img {
         display: none;
     }
     .card img{
-        display: none;
+        /* display: none; */
+        padding: 0;
+        margin:0;
     }
     .left-content{
-        grid-template-columns: 160px;
-        grid-gap: 70px;
+        grid-template-columns: 385px;
+        grid-gap: 25px;
         justify-content: center;
     }
     .hideOnMobile {
         display: none;    
+    }
+    .card {
+    background-color: rgb(228, 63, 63);
+    border-radius: 10px;
+    padding: 3px;
+    box-shadow: 0px 0px 13px 0px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border-style: solid;
+    color: black;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    }
+    .searchbarContainer {
+        width: 295;
+        background-color: black;
     }
 }
 
 @media screen and (max-width: 1350px) {
     /* .pokeSearchForm {
     } */
+    
 }
 
 @media screen and (max-width: 1460px) {
@@ -524,14 +554,19 @@ img {
         background-color: none;
     }
     .searchbarContainer{
-        background-color: none;
+        background-color: black;
+        /* width: 495px; */
     }
+    
 }
 @media screen and (min-width: 1536px) {
     .right-content-container{
-        background-color: black;
+        background-color: #494848;
     }
     .searchbarContainer{
         background-color: black;
     }
+    /* .hideOnMobile {
+        /* display: none; */
+/* } */
 }

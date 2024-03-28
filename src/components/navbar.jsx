@@ -1,12 +1,14 @@
 import '../components/style.css';
 import { State } from "../App";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
+import { DropdownItem } from './Utils/dropdown';
 // import { Route, Routes } from "react-router-dom";
 
 const Navbar = () => {
     let { user, setUser } = useContext(State);
+    const [dropDwnOpen, setDropDwnOpen] = useState(false)
 
     const firebaseSignout = (logoutLinkClickEvent) => {
         signOut(auth).then(() => {
@@ -39,6 +41,10 @@ const Navbar = () => {
                     <li> 
                         <a href="./about" className="">About</a> 
                     </li>
+
+
+                   
+
                     {user === undefined ? <>
                         <li> 
                             <a href="/signup" className="authLinks">Sign-Up</a> 
@@ -48,13 +54,32 @@ const Navbar = () => {
                         </li>
                     </> : <>
                         <li>
-                        <p>Welcome,{user?.email}</p> 
-                        </li>
-                        <li>
-                            <a role={`button`} href={`/`} rel={`noreferrer`} onClick={(logoutLinkClickEvent) => firebaseSignout(logoutLinkClickEvent)} className={`authLinks`}><button className='formBtn logoutBtn'>Log-Out</button></a>
+                            <p>Welcome, {user?.email}</p> 
                         </li>
                     </>}
                 </ul>
+                {
+                    user === undefined ? <>
+
+                    </> : <>
+                    <div className='menuContainer'>
+                        <div className="dropdownTrigger" onClick={() => {setDropDwnOpen(!dropDwnOpen)}}>
+                            <button className='dropBtn'></button>
+                        </div>
+                    <div className={`dropdown ${dropDwnOpen? `active` : `inactive`}`}>
+                        <ul className='dropdownNavList'>
+                            <DropdownItem profile = {user} text = {"Profile"}/>
+                            <DropdownItem drpSettings = {user} settings = {"settings"}/>
+                            <DropdownItem drpInventory = {user} inventory = {"inventory"}/>
+                            <DropdownItem drpTeams = {user} teams = {"teams"}/>
+                            <li>
+                            <a role={`button`} href={`/`} rel={`noreferrer`} onClick={(logoutLinkClickEvent) => firebaseSignout(logoutLinkClickEvent)} className={`authLinks`}><button className='formBtn logoutBtn'>Log-Out</button></a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                    </>
+                }
                 
             </div>
         </>

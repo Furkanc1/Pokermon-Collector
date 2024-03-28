@@ -9,6 +9,10 @@ import About from './components/about';
 import Signup from './components/signup';
 import Login from './components/login';
 import SearchPage from './components/searchPage';
+import Profile from './loggedInPages/profile';
+import Settings from './loggedInPages/settings';
+import Inventory from './loggedInPages/inventory';
+import Teams from './loggedInPages/teams';
 
 export const State = createContext({});
 
@@ -43,6 +47,10 @@ function App() {
         <Route path='/about' element={<About/>} />
         <Route path='/login' element={user === undefined ? <Login/> : <Navigate to={`/`} />} />
         <Route path='/signup' element={user === undefined ? <Signup/> : <Navigate to={`/`} />} />
+        <Route path='/profile' element={<Profile/>} />
+        <Route path='/settings' element={<Settings/>} />
+        <Route path='/inventory' element={<Inventory/>} />
+        <Route path='/teams' element={<Teams/>} />
 
       </Routes>
       

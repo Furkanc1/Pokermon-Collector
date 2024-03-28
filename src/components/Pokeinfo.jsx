@@ -1,4 +1,5 @@
 import React from "react";
+// import toggleImg from "./Utils/toggle";
 
 const Pokeinfo = ({data}) => {
     // let clickedPokemonName = data.name
@@ -10,6 +11,7 @@ const Pokeinfo = ({data}) => {
     // let clickedPokemonDefense = data.
     // let clickedPokemonSpecialMove = data.
     // console.log(data)
+
     return(
         <>
         {
@@ -31,9 +33,9 @@ const Pokeinfo = ({data}) => {
 
                     }
                     </div>
-                    
-                    
-                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="pokemonPic"></img>
+                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`} alt="pokemonPic"></img>
+                    <br></br>
+                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${data.id}.png`} alt="pokemonPic"></img>
                     {/* <h3>Height: {data.height}</h3>
                     <h3>Weight: {data.weight}</h3> */}
                     <div className="abilities">

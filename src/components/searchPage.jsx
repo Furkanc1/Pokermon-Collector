@@ -82,7 +82,9 @@ const SearchPage = () => {
       <div className="welcomeText">
             <h2>
                 <p className="importantText">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt fuga ducimus, commodi quam rem voluptatum nihil nisi eveniet reprehenderit. Labore voluptatum facere inventore eaque tempore libero repellat obcaecati! Ab, praesentium!  
+                Enter Pokemon Name for information ! 
+                <br></br>
+                (Need to add error handling, for now must be lowercase and spelled exactly)
                 </p>
             </h2>
         </div>

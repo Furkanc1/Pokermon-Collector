@@ -9,6 +9,11 @@ import Signup from './components/signup';
 import Login from './components/login';
 import SearchPage from './components/searchPage';
 
+export const authTypes = {
+  signUp: `Sign Up`,
+  signIn: `Sign In`,
+}
+
 function App() {
   return (
     <>

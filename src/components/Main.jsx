@@ -86,7 +86,7 @@ const Main = () => {
     return(
         <>
             <div className="container">
-                <div className="left-content">
+                <div className="left-content cardContainer">
                 {/* <br className="hideOnMobile"></br>
                 <br className="hideOnMobile"></br> */}
                     <Card pokemon = {pokeData} loading = {loading} pokemonInfo = {pokeinfo => setPokeInfo(pokeinfo)} />

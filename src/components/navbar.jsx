@@ -48,7 +48,10 @@ const Navbar = () => {
                         </li>
                     </> : <>
                         <li>
-                            <a role={`button`} href={`/`} rel={`noreferrer`} onClick={(logoutLinkClickEvent) => firebaseSignout(logoutLinkClickEvent)} className={`authLinks`}>Welcome, {user?.email}, Log-Out?</a>
+                        <p>Welcome,{user?.email}</p> 
+                        </li>
+                        <li>
+                            <a role={`button`} href={`/`} rel={`noreferrer`} onClick={(logoutLinkClickEvent) => firebaseSignout(logoutLinkClickEvent)} className={`authLinks`}><button className='formBtn logoutBtn'>Log-Out</button></a>
                         </li>
                     </>}
                 </ul>

@@ -91,7 +91,7 @@ body {
     /* font-weight: bold; */
     text-decoration: underline;
     transition: ease-in-out 175ms;
-    text-decoration-color: red;
+    text-decoration-color: rgb(255, 255, 255);
 }
 
 .navbarContainer ul {
@@ -415,6 +415,11 @@ img {
     background-color: black;
 }
 
+.logoutBtn{
+    text-decoration: none;
+    margin: auto;
+}
+
 .searchbarContainer {
     margin: auto;
     padding: 5px;
@@ -469,20 +474,29 @@ img {
     .hideOnMobile {
         display: none;
     }
+    .logoutBtn{
+        padding: 3px;
+        width: auto;
+        text-decoration: none;
+    }
+
 }
-@media screen and (max-width: 607px) {
+@media screen and (max-width: 815.8px) {
     .navbarContainer {
         flex-direction: column;
     }
     .hideOnMobile {
         display: none;
     }
+    .logoutBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 771px) {
-    .subtitle {
-        display: none;
-    }
     .footerContainer h4{
         display: none;
     }
@@ -497,6 +511,12 @@ img {
     }
     .pokeSearchForm {
         flex-direction: row;    
+    }
+
+}
+@media screen and (max-width: 980px) {
+    .subtitle {
+        display: none;
     }
 
 }

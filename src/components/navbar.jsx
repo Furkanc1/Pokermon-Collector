@@ -1,8 +1,23 @@
-import React from "react";
 import '../components/style.css';
-// import { Route, Routes } from "react-router-dom"
+import { State } from "../App";
+import React, { useContext } from "react";
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
+// import { Route, Routes } from "react-router-dom";
 
 const Navbar = () => {
+    let { user, setUser } = useContext(State);
+
+    const firebaseSignout = (logoutLinkClickEvent) => {
+        signOut(auth).then(() => {
+            console.log(`User Signed Out`, logoutLinkClickEvent);
+            localStorage.removeItem(`user`);
+            setUser(undefined);
+        }).catch((error) => {
+            console.log(`Sign Out Error`, error);
+        });
+    }
+
     return(
         <>
             <div className="navbarContainer">
@@ -24,12 +39,18 @@ const Navbar = () => {
                     <li> 
                         <a href="./about" className="">About</a> 
                     </li>
-                    <li> 
-                        <a href="/signup" className="">Sign-Up</a> 
-                    </li>
-                    <li> 
-                        <a href="/login" className="">Log-In</a> 
-                    </li>
+                    {user === undefined ? <>
+                        <li> 
+                            <a href="/signup" className="authLinks">Sign-Up</a> 
+                        </li>
+                        <li> 
+                            <a href="/login" className="authLinks">Log-In</a> 
+                        </li>
+                    </> : <>
+                        <li>
+                            <a role={`button`} href={`/`} rel={`noreferrer`} onClick={(logoutLinkClickEvent) => firebaseSignout(logoutLinkClickEvent)} className={`authLinks`}>Welcome, {user?.email}, Log-Out?</a>
+                        </li>
+                    </>}
                 </ul>
                 
             </div>

@@ -25,7 +25,7 @@ function App() {
     if (user === undefined) {
       let storedUser = JSON.parse(localStorage.getItem(`user`));
       if (storedUser) {
-        console.log(`Stored User`, storedUser);
+        // console.log(`Stored User`, storedUser);
         setUser(storedUser);
       }
     }

@@ -100,6 +100,8 @@ body {
     padding: 0;
     display: flex;
     list-style: none;
+    align-items: center;
+    justify-content: center;
 }
 
 /* .navButtons {
@@ -536,22 +538,23 @@ img {
         width: auto;
     }
 }
+/* @media screen and (max-width: 405px) {
+   
+} */
 @media screen and (max-width: 414px) {
     .navbarContainer ul {
         margin: 0;
         gap: 15px;
         padding: 0px;
-        display: grid;
         list-style: none;
         grid-template-columns: 175px 100px;
     }
-}
 
-@media screen and (max-width: 422px) {
-    .logoutBtn {
-        border: none;
+    .dropdown.active{
+        display: none;
     }
 }
+
 @media screen and (max-width: 420px) {
     .authForm {
         padding: 35px;
@@ -563,8 +566,17 @@ img {
     .pokeSearchForm{
         padding: 0px 60px 0px 60px;
     }
-    .navbarContainer {
-        border: none;
+    
+    .navbarContainer .dropdownNavList {
+        grid-template-columns: 75px 50px 50px 50px 50px;
+    }
+    /* .navbarContainer {
+    } */
+}
+
+@media screen and (max-width: 500px) {
+    .navbarContainer .dropdownNavList {
+        display: grid;
     }
 }
 
@@ -591,22 +603,27 @@ img {
     }
     .logoutBtn {
         display: flex;
-        justify-content: center;
+        width: max-content;
         align-items: center;
-        margin: 0;
+        justify-content: center;
     }
     /* .menuContainer {
         display: none;
     } */
     .navbarContainer .dropdownNavList {
-    width: auto;
-    position: relative;
-    flex-direction: row;
-    display: flex;    
+        width: auto;
+        display: grid;
+        padding: 5px 10px;
+        position: relative;
+        align-items: center;
+        flex-direction: row;
+        /* display: flex; */
+        justify-content: space-around;
+        grid-template-columns: 75px 50px 50px 50px 50px;
     }
     .dropdown.active {
         width: auto;
-        margin-left: -117px;
+        margin-left: -137px;
     }
 
 }

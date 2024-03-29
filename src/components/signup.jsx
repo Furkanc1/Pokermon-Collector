@@ -7,11 +7,19 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 // Sign Up Component
 const Signup = () => {
 
-    const firebaseSignUp = (email, password, type) => {
-        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+    const firebaseSignUp = (email, password, displayName, type) => {
+        createUserWithEmailAndPassword(auth, email, password, displayName).then((userCredential) => {
             const firebaseUser = userCredential.user;
             console.log(`Firebase User ${type}`, firebaseUser);
             window.location.href = `/login`;
+            if(userCredential){
+              userCredential.updateProfile({
+                 displayName: displayName.val(),
+              })
+            }
+        })
+        .then( function() {
+            console.log('User Name Set!');
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -27,8 +35,8 @@ const Signup = () => {
         
         let email = formSubmitEvent.target.signupEmail.value;
         let password = formSubmitEvent.target.signupPassword.value;
-
-        firebaseSignUp(email, password, type);
+        let displayName = formSubmitEvent.target.displayName.value
+        firebaseSignUp(email, password, displayName, type);
     }
 
     return(
@@ -38,7 +46,7 @@ const Signup = () => {
                 Welcome! Sign-up Below:
             </div>
             <form className="authForm signupForm" onSubmit={(formSubmitEvent) => authFormSubmit(authTypes.signUp, formSubmitEvent)}>
-                <input type="username" id="username" name="username" placeholder="Enter Username..."/>
+                <input type="username" id="username" name="displayName" placeholder="Enter Username..."/>
                 <input type="email" required={true} id="email" name="signupEmail" placeholder="Enter Email..."/>
                 <input type="password" required={true} id="password" name="signupPassword" placeholder="Enter Password..."/>
                 

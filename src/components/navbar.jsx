@@ -73,7 +73,7 @@ const Navbar = () => {
                             <DropdownItem drpInventory = {user} inventory = {"inventory"}/>
                             <DropdownItem drpTeams = {user} teams = {"teams"}/>
                             <li>
-                            <a role={`button`} href={`/`} rel={`noreferrer`} onClick={(logoutLinkClickEvent) => firebaseSignout(logoutLinkClickEvent)} className={`authLinks`}><button className='formBtn logoutBtn'>Log-Out</button></a>
+                            <a role={`button`} href={`/`} rel={`noreferrer`} onClick={(logoutLinkClickEvent) => firebaseSignout(logoutLinkClickEvent)} className={`authLinks`}><button className='formBtn logoutBtn'>Logout</button></a>
                             </li>
                         </ul>
                     </div>

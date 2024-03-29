@@ -550,9 +550,9 @@ img {
         grid-template-columns: 175px 100px;
     }
 
-    .dropdown.active{
+    /* .dropdown.active{
         display: none;
-    }
+    } */
 }
 
 @media screen and (max-width: 420px) {

@@ -7,15 +7,25 @@ const SearchPage = () => {
     const [pokemon, setPokemon] = useState();
     // const [loading, setLoading] = useState(true)
     const [searchLoading, setSearchLoading] = useState(false)
+    
+    const uppercaseName = (name) => {
+        let uppercased = name.charAt(0).toUpperCase() + name.substring(1)
+        return uppercased
+      } 
 
     const getSearchedPokemon = async(search) => {
-        setSearchLoading(true)
-        const response = await gettingPokemon(search)
-        // console.log( "search response data:" ,response)
-        const results = await response.json()
-        console.log('searched pokemon info:' , results)
-        setPokemon(results)
-        setSearchLoading(false)
+        let userSearch = search.toLowerCase(); 
+        if (search) {
+          setSearchLoading(true)
+          const response = await gettingPokemon(userSearch)
+          // console.log( "search response data:" ,response)
+          const results = await response.json()
+          console.log('searched pokemon info:' , results)
+          setPokemon(results)
+          setSearchLoading(false)
+        } else {
+          console.log("error searching for pokemon")
+        }
     }
 
   return (
@@ -25,7 +35,7 @@ const SearchPage = () => {
         {!searchLoading && pokemon ? (
           <div className="searchedPokemonContainer">
             <div className="searchedPokemonContainer ">
-              <h1 className="Pokename">{pokemon.name}</h1>
+              <h1 className="Pokename">{uppercaseName(pokemon.name)}</h1>
               <div className="pokeDataContainer">
                 <h3 id="typeText">Type(s): </h3>
                 {pokemon.types.map((data, index) => {
@@ -41,8 +51,6 @@ const SearchPage = () => {
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
                 alt="pokemonPic"
               ></img>
-              {/* <h3>Height: {data.height}</h3> 
-        <h3>Weight: {data.weight}</h3> */}
               <div className="abilities">
                 <div className="pokeDataContainer">
                   <h3 className="">Abilities:</h3>
@@ -84,7 +92,10 @@ const SearchPage = () => {
                 <p className="importantText">
                 Enter Pokemon Name for information ! 
                 <br></br>
-                (Need to add error handling, for now must be lowercase and spelled exactly)
+                (How to use: Enter Pokemon Name Spelled Correctly) 
+                <br></br>
+                <br></br>
+                Dev Note: Need to add more error handling for incorrect spell-cases
                 </p>
             </h2>
         </div>

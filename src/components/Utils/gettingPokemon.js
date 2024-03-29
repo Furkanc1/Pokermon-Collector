@@ -5,6 +5,11 @@ const pokeQuery = {
 }
 export default async function gettingPokemon
 (pokemon) {
-    console.log(`${baseURL}/${pokeQuery.pokemon}/${pokemon}`)
+    try {
+        console.log(`${baseURL}/${pokeQuery.pokemon}/${pokemon}`)
     return fetch(`${baseURL}/${pokeQuery.pokemon}/${pokemon}`)
+    // doesnt work idk why...
+    } catch (error) {
+        console.log("pokemon does not exist", error)
+    }
 }

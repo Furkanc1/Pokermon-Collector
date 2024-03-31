@@ -286,6 +286,7 @@ img {
 }
 
 .searchPageContainer {
+    gap: 17px;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -293,6 +294,7 @@ img {
     margin: auto 175px;
     align-items: center;
     justify-content: center;
+    /* flex-direction: column; */
 }
 
 .authFormPageContainer {
@@ -306,6 +308,7 @@ img {
 
 .welcomeText {
     padding: 15px;
+    text-align: center;
     border-style: solid;
     border-radius: 40px;
     margin: 40px 0px 85px 0px;
@@ -535,8 +538,9 @@ img {
     list-style: none;
 }
 
-.userDisplayText {
+#userDisplayText {
     display: flex;
+    gap: 5px;
 }
 
 #usernameStyle {
@@ -552,6 +556,25 @@ img {
     }
 }
 
+@media screen and (max-width: 330px) {
+    .navbarContainer {
+        display: flex;
+    }
+    .navbarContainer ul {
+        gap: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .landingPageContainer{
+        margin: auto 150px;
+    }
+    .footerContainer {
+        gap: 50px;
+    }
+}
 @media screen and (max-width: 368px) {
     .card {
         width: auto;
@@ -563,8 +586,8 @@ img {
 @media screen and (max-width: 414px) {
     .navbarContainer ul {
         margin: 0;
-        gap: 15px;
         padding: 0px;
+        /* gap: 15px; */
         list-style: none;
         grid-template-columns: 175px 100px;
     }
@@ -644,7 +667,6 @@ img {
         width: auto;
         margin-left: -137px;
     }
-
 }
 
 @media screen and (max-width: 771px) {

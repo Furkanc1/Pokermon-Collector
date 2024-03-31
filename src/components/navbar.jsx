@@ -74,7 +74,7 @@ const Navbar = () => {
                         </li>
                     </> : <>
                         <li>
-                            <p>Welcome, {displayName.charAt(0).toUpperCase() + displayName.substring(1)} </p> 
+                            <span id='userDisplayText'><p className='hideOnMobile'>Welcome,</p> <p id='usernameStyle'>{displayName.charAt(0).toUpperCase() + displayName.substring(1)}</p> </span> 
                         </li>
                     </>}
                 </ul>

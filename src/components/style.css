@@ -197,6 +197,7 @@ button:hover {
     color: white;
     border: solid;
     border-radius: 8px;
+    box-shadow: white 0px 0px 25px;
     background-color: rgb(228, 63, 63);
 }
 
@@ -363,6 +364,15 @@ img {
     text-shadow: red 1px 1px 7px;
 }
 
+.frntBckDesc {
+    padding: 5px;
+    border-style: solid;
+    border-radius: 40px;
+    margin: 9px;
+    background-color: rgb(228, 63, 63);
+    /* box-shadow: white 0px 0px 28px 0px; */
+}
+
 /* .listText{
 
 } */
@@ -523,6 +533,15 @@ img {
     padding: 0;
     display: grid;
     list-style: none;
+}
+
+.userDisplayText {
+    display: flex;
+}
+
+#usernameStyle {
+    color: #e43f3f;
+    text-shadow: white 1px 1px 12px;
 }
 @media screen and (max-width: 306px) {
     .navbarContainer {
@@ -719,9 +738,9 @@ img {
         justify-content: center;
         grid-template-columns: 385px;
     }
-    .hideOnMobile {
+    /* .hideOnMobile {
         display: none;    
-    }
+    } */
     .card {
         padding: 3px;
         margin: auto;

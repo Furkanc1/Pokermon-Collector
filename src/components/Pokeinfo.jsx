@@ -26,15 +26,17 @@ const Pokeinfo = ({data}) => {
                         data.types.map((data, index) => {
                             return( 
                                     <h3 key={`${data.type.name}-${index}`}>
-                                        <li className="pokeTypes">- {data.type.name} </li>
+                                        <li className="pokeTypes">- {data.type.name.charAt(0).toUpperCase() + data.type.name.substring(1)} </li>
                                     </h3>
                             )
                     })
 
                     }
                     </div>
+                    <h3 className="importantTextAlt frntBckDesc">Front</h3>
                     <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`} alt="pokemonPic"></img>
                     <br></br>
+                    <h3 className="importantTextAlt frntBckDesc">Back</h3>
                     <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${data.id}.png`} alt="pokemonPic"></img>
                     {/* <h3>Height: {data.height}</h3>
                     <h3>Weight: {data.weight}</h3> */}
@@ -45,7 +47,7 @@ const Pokeinfo = ({data}) => {
                             data.abilities.map((abil, index) => {
                                 return(
                                         <div key={`${abil.ability.name}-${index}`} className="group">
-                                            <h2>{abil.ability.name}</h2>
+                                            <h2>{abil.ability.name.charAt(0).toUpperCase() + abil.ability.name.substring(1)}</h2>
                                         </div>
                                 )
                             })

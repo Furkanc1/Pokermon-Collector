@@ -1,14 +1,34 @@
 import '../components/style.css';
 import { State } from "../App";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import { DropdownItem } from './Utils/dropdown';
 // import { Route, Routes } from "react-router-dom";
 
+// const uppercaseName = (name) => {
+//     name.charAt(0).toUpperCase() + name.substring(1)
+// } 
+
 const Navbar = () => {
-    let { user, setUser } = useContext(State);
+    const { user, setUser } = useContext(State);
     const [dropDwnOpen, setDropDwnOpen] = useState(false)
+    // set the state for users displayname (to appear in navbar)
+    const [displayName, setDisplayName] = useState("")
+
+
+
+    useEffect(() => {
+        if (user && user.displayName) {
+            console.log(user.displayName)
+            setDisplayName(user.displayName);
+        } else if (user && user.email) {
+            console.log( "currentUsers Display name", user.displayName)
+            console.log(user)
+            // Fallback to email if displayName is not available
+            setDisplayName(user.email); 
+        }
+    }, [user] );
 
     const firebaseSignout = (logoutLinkClickEvent) => {
         signOut(auth).then(() => {
@@ -54,7 +74,7 @@ const Navbar = () => {
                         </li>
                     </> : <>
                         <li>
-                            <p>Welcome, {user?.email}</p> 
+                            <p>Welcome, {displayName.charAt(0).toUpperCase() + displayName.substring(1)} </p> 
                         </li>
                     </>}
                 </ul>

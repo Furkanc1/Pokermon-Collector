@@ -2,24 +2,24 @@ import React from "react";
 import '../components/style.css';
 import { authTypes } from "../App";
 import { auth } from "../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 // Sign Up Component
 const Signup = () => {
 
     const firebaseSignUp = (email, password, displayName, type) => {
-        createUserWithEmailAndPassword(auth, email, password, displayName).then((userCredential) => {
+        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const firebaseUser = userCredential.user;
             console.log(`Firebase User ${type}`, firebaseUser);
-            window.location.href = `/login`;
-            if(userCredential){
-              userCredential.updateProfile({
-                 displayName: displayName.val(),
-              })
+            // if display name is provided and also is not an empty string
+            if (displayName && displayName.trim() !== '') {
+                //the nupdate users profile with display name
+                return updateProfile(firebaseUser, { displayName: displayName });
             }
         })
-        .then( function() {
-            console.log('User Name Set!');
+        .then(() => {
+            console.log('displayName set Succesfully');
+            window.location.href = `/login`;
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;

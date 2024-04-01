@@ -533,6 +533,51 @@ img {
     background-color: white;
     padding: 10px 5px 10px 5px;
 }
+#dark .authForm input {
+    padding: 10px 12px;
+    background: rgb(31, 32, 35);
+    border: 1px solid rgb(60, 63, 68);
+    border-radius: 4px;
+    font-size: 13px;
+    color: rgb(247, 248, 248);
+    height: 46px;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+    :focus{
+        outline: none;
+        box-shadow: none;
+        border-color: rgb(100, 153, 255);
+    }
+}
+
+.toggle-btn {
+    width: 50px;
+    height: 30px;
+    background-color: gray;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .checkbox:checked + .toggle-btn {
+    background-color: green;
+  }
+  
+  .toggle-btn::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease;
+  }
+  
+  .checkbox:checked + .toggle-btn::before {
+    transform: translateX(20px);
+  }
 
 .formBtn {
     padding: 5px;
@@ -657,10 +702,23 @@ img {
     gap: 5px;
 }
 
+
+
 #usernameStyle {
     color: var(--button_background);
     text-shadow: white 1px 1px 12px;
 }
+
+#profileLink {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+/* #profileLink:hover {
+    border-style: solid;
+    border-radius: 8px;
+    padding: 5px;
+} */
 @media screen and (max-width: 306px) {
     .navbarContainer {
         flex-direction: column;
@@ -687,6 +745,11 @@ img {
     }
     .footerContainer {
         gap: 50px;
+    }
+}
+@media screen and (max-width: 353px) {
+    .navbarContainer .dropdownNavList {
+        grid-template-columns: auto;
     }
 }
 @media screen and (max-width: 368px) {
@@ -724,10 +787,11 @@ img {
     }
     
     .navbarContainer .dropdownNavList {
-        grid-template-columns: 75px 50px 50px 50px 50px;
+        grid-template-columns: 75px 50px 50px 50px;
     }
-    /* .navbarContainer {
-    } */
+    #profileButton {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -775,11 +839,12 @@ img {
         flex-direction: row;
         /* display: flex; */
         justify-content: space-around;
-        grid-template-columns: 75px 50px 50px 50px 50px;
+        grid-template-columns: auto auto auto auto auto;
     }
     .dropdown.active {
         width: auto;
         margin-left: -137px;
+        left: 23px
     }
 }
 

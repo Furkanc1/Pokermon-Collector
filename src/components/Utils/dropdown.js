@@ -4,7 +4,7 @@ export const DropdownItem = (props) => {
     return(
         <>
             <li className="dropdownItem">
-                <a href="/profile">{props.text}</a>
+                <a href="/profile" className="hideOnMobile">{props.text}</a>
                 <a href="/settings">{props.settings}</a>
                 <a href="/inventory">{props.inventory}</a>
                 <a href="/teams">{props.teams}</a>

@@ -25,7 +25,7 @@ export const authTypes = {
 function App() {
 
   const [user, setUser] = useState(undefined);
-  const [theme, setTheme] = useState("dark")
+  const [theme, setTheme] = useState("light")
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light" ))

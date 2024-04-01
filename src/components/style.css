@@ -4,20 +4,44 @@
 }
 
 :root {
-    --engineeringOrange: #ba1200;
-    --cardAndButtonBG: var(--engineeringOrange);
+    --yellowSubtitle: #F7CB15;
+    --nav_background: black;
+    --button_background: #e43f3f;
+
+    --Ltbody_background: rosybrown;
+    --Drkbody_background: #251351;
+
+    --LtinfoBoxes_background: rgb(228, 63, 63);
+    --DrkinfoBoxes_background: #582C4D;
+
+    --LtTxtShadow: white;
+    --DrkTxtShadow: #DE6C83;
+    
+    --LtPokeInfoContainer: #D741A7;
+    --DrkPokeInfoContainer: #041F1E;
+
+    --LtSearchBarContainer: black;
+    --DrkSearchBarContainer: var(--DrkPokeInfoContainer);
+}
+
+#light {
+    background-color: var(--Ltbody_background);
+}
+
+#dark {
+    background-color: var(--Drkbody_background);
 }
 
 body {
     height: 100vh;
-    background-color: rosybrown;
+    background-color: var(--Ltbody_background);
 }
 
 .container {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  padding-top: 100px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    padding-top: 100px;
 }
 
 .web-title {
@@ -32,7 +56,7 @@ body {
 }
 
 .subtitle {
-    color: yellow;
+    color: var(--yellowSubtitle);
     font-size: larger;
 }
 
@@ -45,7 +69,7 @@ body {
     align-items: center;
     border-color: white;
     justify-content: center;
-    background-color: black;
+    background-color: var(--nav_background);
 }
 
 .footerContainer a {
@@ -66,8 +90,8 @@ body {
     color: white;
     align-items: center;
     border-color: white;
-    background-color: black;
     justify-content: space-between;
+    background-color: var(--nav_background);
 }
 
 .navbarContainer img {
@@ -138,7 +162,7 @@ body {
     font-weight: bold;
     border-radius: 8px;
     /* background: var(--cardAndButtonBG); */
-    background-color: #e43f3f;
+    background-color: var(--button_background);
 }
 
 button:hover {
@@ -158,7 +182,6 @@ button:hover {
 }
 
 .right-content-container{
-    /* margin-bottom: 65%; */
     display: flex;
     flex-wrap: wrap;
     border-radius: 8px;
@@ -166,6 +189,7 @@ button:hover {
     /* margin-top: 50%; */
     flex-direction: column;
     justify-content: center;
+    /* margin-bottom: 65%; */
     margin: 40px -6px 0px 0px;
 }
 
@@ -189,6 +213,12 @@ button:hover {
     border-style: solid;
     box-shadow: white 0px 0px 30px;
 }
+#light .searchedPokemonContainer img {
+    box-shadow: white 0px 0px 30px;
+}
+#dark .searchedPokemonContainer img {
+    box-shadow: var(--DrkTxtShadow) 0px 0px 30px;
+}
 
 .right-content img {
     margin: 0px;
@@ -198,7 +228,12 @@ button:hover {
     border: solid;
     border-radius: 8px;
     box-shadow: white 0px 0px 25px;
-    background-color: rgb(228, 63, 63);
+    background-color: var(--LtinfoBoxes_background);
+}
+
+#dark .right-content img {
+    box-shadow: var(--DrkTxtShadow) 0px 0px 25px;
+    background-color: var(--DrkinfoBoxes_background);
 }
 
 .Pokename {
@@ -211,7 +246,13 @@ button:hover {
     border-style: solid;
     border-color: white;
     justify-content: center;
-    background-color: rgb(228, 63, 63);
+}
+
+#light .Pokename{
+    background-color: var(--LtinfoBoxes_background);
+}
+#dark .Pokename{
+    background-color: var(--DrkinfoBoxes_background);
 }
 
 .right-content h1 {
@@ -232,7 +273,12 @@ button:hover {
     border-radius: 8px;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(228, 63, 63);
+}
+#light .abilities .group {
+    background-color: var(--LtinfoBoxes_background);
+}
+#dark .abilities .group {
+    background-color: var(--DrkinfoBoxes_background);
 }
 
 .base-stat {
@@ -242,7 +288,13 @@ button:hover {
     margin: 5px 1rem;
     border-radius: 8px;
     border-style: solid;
-    background-color: rgb(228, 63, 63);
+    background-color: var(--LtinfoBoxes_background);
+}
+#light .base-stat {
+    background-color: var(--LtinfoBoxes_background);
+}
+#dark .base-stat {
+    background-color: var(--DrkinfoBoxes_background);
 }
 
 img {
@@ -266,12 +318,33 @@ img {
     justify-content: space-around;
     /* background: var(--cardAndButtonBG); */
     box-shadow: 0px 0px 13px 0px black;
-    background-color: rgb(228, 63, 63);
+    background-color: var(--LtinfoBoxes_background);
+}
+#light .card {
+    background-color: var(--LtinfoBoxes_background);
+}
+#dark .card {
+    background-color: var(--DrkinfoBoxes_background);
+    color: white;
 }
 
 .card:hover {
     color: white;
     border-color: white;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 0px;
+    transition: ease-in-out 250ms;
+}
+#light .card:hover {
+    color: white;
+    border-color: white;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 0px;
+    transition: ease-in-out 250ms;
+}
+#dark .card:hover {
+    color: black;
+    border-color: black;
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 0px;
     transition: ease-in-out 250ms;
@@ -313,7 +386,14 @@ img {
     border-radius: 40px;
     margin: 40px 0px 85px 0px;
     box-shadow: white 0px 0px 28px 0px;
-    background-color: rgb(228, 63, 63);
+}
+
+#light .welcomeText {
+    background-color: var(--LtinfoBoxes_background);
+}
+
+#dark .welcomeText {
+    background-color: var(--DrkinfoBoxes_background);
 }
 
 .newsFeed {
@@ -322,13 +402,13 @@ img {
     border-style: solid;
     margin: 40px 0px 40px 0px;
     background-color: rgb(204, 237, 234);
-    box-shadow: rgb(228, 63, 63) 0px 0px 28px 0px;
+    box-shadow: var(--LtinfoBoxes_background) 0px 0px 28px 0px;
 }
 
-.welcomeText:hover {
+/* .welcomeText:hover { */
     /* transform: scale(1.02); */
-    transition: ease-in-out 300ms;
-}
+    /* transition: ease-in-out 300ms;
+} */
 
 .newsFeed:hover {
     transform: scale(1.02);
@@ -360,11 +440,27 @@ img {
 .importantText {
     padding: 10px;
     text-align: center;
-    text-shadow: white 0px 1px 5px;
 }
+
+#light .importantText {
+    text-shadow: var(--LtTxtShadow) 0px 1px 5px;
+}
+
+#dark .importantText {
+    text-shadow: var(--DrkTxtShadow) 0px 1px 5px;
+}
+
 .importantTextAlt {
     padding: 10px;
     text-shadow: red 1px 1px 7px;
+}
+
+#light .importantTextAlt {
+    text-shadow: var(--LtTxtShadow) 0px 1px 5px;
+}
+
+#dark .importantTextAlt {
+    text-shadow: var(--DrkTxtShadow) 0px 1px 5px;
 }
 
 .frntBckDesc {
@@ -372,8 +468,14 @@ img {
     border-style: solid;
     border-radius: 40px;
     margin: 9px;
-    background-color: rgb(228, 63, 63);
-    /* box-shadow: white 0px 0px 28px 0px; */
+    background-color: var(--LtinfoBoxes_background);
+    box-shadow: rgb(141, 141, 141) 0px 0px 4px 0px;
+}
+#light .frntBckDesc {
+    background-color: var(--LtinfoBoxes_background);
+}
+#dark .frntBckDesc {
+    background-color: var(--DrkinfoBoxes_background);
 }
 
 /* .listText{
@@ -396,8 +498,15 @@ img {
     align-items: center;
     /* margin-top: 2rem; */
     justify-content: center;
-    background-color: rgb(228, 63, 63);
 }
+
+#light .pokeDataContainer {
+    background-color: var(--LtinfoBoxes_background);
+}
+#dark .pokeDataContainer {
+    background-color: var(--DrkinfoBoxes_background);
+}
+
 
 .authForm{
     display: flex;
@@ -406,9 +515,14 @@ img {
     border-style: solid;
     flex-direction: column;
     justify-content: center;
-    background-color: #e43f3f;
     padding: 25px 55px 25px 55px;
     box-shadow: white 0px 0px 28px 0px;
+    background-color: var(--button_background);
+}
+
+.authForm{
+    box-shadow: var(--DrkTxtShadow) 0px 0px 28px 0px;
+    background-color: var(--DrkinfoBoxes_background);
 }
 
 .authForm input {
@@ -427,7 +541,7 @@ img {
     margin: 22px auto;
     border-radius: 8px;
     border-style: solid;
-    background-color: black;
+    background-color: var(--nav_background);
 }
 
 .logoutBtn{
@@ -509,7 +623,7 @@ img {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: black;
+    background-color: var(--nav_background);
     border: 2px solid white;
     border-radius: 8px;
     text-align: center;
@@ -519,7 +633,7 @@ img {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #e43f3f;
+    background-color: var(--button_background);
 }
 .dropBtn:hover {
     cursor: pointer;
@@ -544,7 +658,7 @@ img {
 }
 
 #usernameStyle {
-    color: #e43f3f;
+    color: var(--button_background);
     text-shadow: white 1px 1px 12px;
 }
 @media screen and (max-width: 306px) {
@@ -707,14 +821,20 @@ img {
 
     .right-content-container {
         border-style: solid; 
-        background-color: rgba(57, 8, 58, 0.64); 
-        }
+        background-color: var(--DrkPokeInfoContainer);
+    }
+    #light .right-content-container {
+        background-color: var(--LtPokeInfoContainer); 
+    }
+    #dark .right-content-container {
+        background-color: var(--DrkPokeInfoContainer); 
+    }
     .searchbarContainer {
         width: 269px;
         padding: 25px;
         border-radius: 8px;
         border-style: solid;
-        background-color: black;
+        background-color: var(--nav_background);
         }
     }
     .left-content {
@@ -776,11 +896,11 @@ img {
         box-sizing: border-box;
         justify-content: space-around;
         box-shadow: 0px 0px 13px 0px black;
-        background-color: rgb(228, 63, 63);
+        background-color: var(--LtinfoBoxes_background);
     }
     .searchbarContainer {
         width: 295;
-        background-color: black;
+        background-color: var(--nav_background);
     }
 
 }
@@ -792,16 +912,16 @@ img {
     .searchbarContainer{
         width: 495px;
         padding: 30px;
-        background-color: black;
+        background-color: var(--DrkSearchBarContainer);
     }
     
 }
 @media screen and (min-width: 1536px) {
     .right-content-container{
-        background-color: #494848;
+        background-color: var(--nav_background);
     }
     .searchbarContainer{
-        background-color: black;
+        background-color: var(--nav_background);
     }
     /* .hideOnMobile {
         /* display: none; */

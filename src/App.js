@@ -13,8 +13,9 @@ import Profile from './loggedInPages/profile';
 import Settings from './loggedInPages/settings';
 import Inventory from './loggedInPages/inventory';
 import Teams from './loggedInPages/teams';
-
+// import themeSelect from './components/Utils/themeSelect';
 export const State = createContext({});
+export const ThemeContext = createContext(null)
 
 export const authTypes = {
   signUp: `Sign Up`,
@@ -23,7 +24,12 @@ export const authTypes = {
 
 function App() {
 
-  let [user, setUser] = useState(undefined);
+  const [user, setUser] = useState(undefined);
+  const [theme, setTheme] = useState("dark")
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light" ))
+  }
 
   useEffect(() => {
     if (user === undefined) {
@@ -36,8 +42,11 @@ function App() {
   }, [user])
 
   return (
+    <ThemeContext.Provider value={{ theme , toggleTheme }}>
+    <div className='app' id={theme}>
     <State.Provider value={{ user, setUser }}>
       <Navbar />
+
       <Routes>
         
         <Route path='/' element={<Landing />} />
@@ -56,6 +65,9 @@ function App() {
       
       <Footer />
     </State.Provider>
+    </div>
+    </ThemeContext.Provider>
+
   );
 }
 

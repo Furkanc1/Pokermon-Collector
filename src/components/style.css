@@ -520,7 +520,7 @@ img {
     background-color: var(--button_background);
 }
 
-.authForm{
+#dark .authForm{
     box-shadow: var(--DrkTxtShadow) 0px 0px 28px 0px;
     background-color: var(--DrkinfoBoxes_background);
 }
@@ -532,6 +532,7 @@ img {
     border-style: solid;
     background-color: white;
     padding: 10px 5px 10px 5px;
+
 }
 #dark .authForm input {
     padding: 10px 12px;

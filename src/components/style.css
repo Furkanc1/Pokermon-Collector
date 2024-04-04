@@ -28,6 +28,22 @@
     --newsFeedBackground: #03CEA4;
 }
 
+.app {
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjusted value */
+    background-position: center; /* Center the background image */
+    /* Light theme background image */
+    background-image: url(https://i.pinimg.com/originals/95/29/7f/95297f250f9563193468f7969decc4f4.png);
+}
+
+#dark.app {
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjusted value */
+    background-position: center;
+    /* Dark theme background image */
+    background-image: url(https://i.pinimg.com/736x/a5/68/06/a56806bce812d4ec85665792d83b809b.jpg);
+}
+
 #light {
     background-color: var(--Ltbody_background);
 }
@@ -224,7 +240,7 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     /* margin-bottom: 65%; */
-    margin: 40px -6px 0px 0px;
+    margin: -230px 100px 0px 0px;
 }
 
 .searchedPokemonContainer{
@@ -337,8 +353,12 @@ img {
   object-fit: fill;
 }
 
+.card img {
+    width: 29%;
+}
+
 .card {
-    width: 281px;
+    width: 285px;
     padding: 3px;
     margin: -40px;
     display: flex;
@@ -393,7 +413,7 @@ img {
 }
 
 .searchPageContainer {
-    gap: 17px;
+    gap: 34px;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -921,10 +941,11 @@ img {
     .container{
         padding-top: 30px;
         flex-direction: column-reverse;
-
+        
     .right-content-container {
         border-style: solid; 
         background-color: var(--DrkPokeInfoContainer);
+        margin: auto;
     }
     #light .right-content-container {
         background-color: var(--LtPokeInfoContainer); 
@@ -1011,6 +1032,7 @@ img {
 @media screen and (max-width: 1460px) {
     .right-content-container{
         background-color: none;
+        margin: -230px -6px 0px 0px;
     }
     .searchbarContainer{
         width: 495px;

@@ -58,9 +58,6 @@ const Navbar = () => {
                     <li> 
                         <a href="./search" className="">Search</a> 
                     </li>
-                    <li> 
-                        <a href="./about" className="">About</a> 
-                    </li>
 
 
                    

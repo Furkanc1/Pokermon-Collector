@@ -13,9 +13,13 @@ import Profile from './loggedInPages/profile';
 import Settings from './loggedInPages/settings';
 import Inventory from './loggedInPages/inventory';
 import Teams from './loggedInPages/teams';
+// import ReactSwitch from 'react-switch';
 // import themeSelect from './components/Utils/themeSelect';
 export const State = createContext({});
-export const ThemeContext = createContext(null)
+export const ThemeContext = createContext({
+  theme: "light",
+  toggleTheme: () => {},
+})
 
 export const authTypes = {
   signUp: `Sign Up`,
@@ -25,10 +29,15 @@ export const authTypes = {
 function App() {
 
   const [user, setUser] = useState(undefined);
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light"
+  })
 
   const toggleTheme = () => {
-    setTheme((curr) => (curr === "light" ? "dark" : "light" ))
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme) 
+    // here we set local storage theme so that it stays whatver theme selected throughout application
+    localStorage.setItem("theme", newTheme)
   }
 
   useEffect(() => {
@@ -45,8 +54,8 @@ function App() {
     <ThemeContext.Provider value={{ theme , toggleTheme }}>
     <div className='app' id={theme}>
     <State.Provider value={{ user, setUser }}>
+      
       <Navbar />
-
       <Routes>
         
         <Route path='/' element={<Landing />} />

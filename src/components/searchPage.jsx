@@ -29,7 +29,7 @@ const SearchPage = () => {
     }
 
   return (
-    <div className="searchPageContainer">
+    <div className="searchPageContainer ">
       <div className="searchbarContainer">
         <Search getSearchedPokemon={getSearchedPokemon} />
         {!searchLoading && pokemon ? (

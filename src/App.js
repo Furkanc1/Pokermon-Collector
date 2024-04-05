@@ -13,6 +13,9 @@ import Profile from './loggedInPages/profile';
 import Settings from './loggedInPages/settings';
 import Inventory from './loggedInPages/inventory';
 import Teams from './loggedInPages/teams';
+import TestingCache from './components/testingCache';
+import { PokemonDataProvider } from './components/PokemonDataContext';
+// import TestingMainWithCache from './components/testinMainCachedPoke';
 // import ReactSwitch from 'react-switch';
 // import themeSelect from './components/Utils/themeSelect';
 export const State = createContext({});
@@ -52,6 +55,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme , toggleTheme }}>
+      <PokemonDataProvider>
     <div className='app' id={theme}>
     <State.Provider value={{ user, setUser }}>
       
@@ -69,12 +73,15 @@ function App() {
         <Route path='/settings' element={<Settings/>} />
         <Route path='/inventory' element={<Inventory/>} />
         <Route path='/teams' element={<Teams/>} />
+        <Route path='/cacheTest' element={<TestingCache/>} />
+        {/* <Route path='/mainWithCache' element={<TestingMainWithCache/>} /> */}
 
       </Routes>
       
       <Footer />
     </State.Provider>
     </div>
+    </PokemonDataProvider>
     </ThemeContext.Provider>
 
   );

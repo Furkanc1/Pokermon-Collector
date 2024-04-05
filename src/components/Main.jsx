@@ -3,10 +3,11 @@ import Card from "./Card";
 import Pokeinfo from "./Pokeinfo";
 import '../components/style.css';
 import axios from "axios";
+// import { usePokemonData } from "./PokemonDataContext";
 // import Search from "./search";
 // import gettingPokemon from "./Utils/gettingPokemon";
 const Main = () => {
-    
+    // const cachedPokemonData = usePokemonData()
     const [pokeData, setPokeData] = useState([]);
     const [loading, setLoading] = useState(true)
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
@@ -68,7 +69,7 @@ const Main = () => {
         setLoading(false)
         // console.log("array of 40 (pokeData): ", pokeData)
     },[url])
-
+    
     useEffect(() => {
         getPokeFun();
         

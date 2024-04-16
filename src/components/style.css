@@ -1032,7 +1032,7 @@ img {
 @media screen and (max-width: 1460px) {
     .right-content-container{
         background-color: none;
-        margin: -230px -6px 0px 0px;
+        margin: -175px -6px 0px 0px;
     }
     .searchbarContainer{
         width: 495px;
